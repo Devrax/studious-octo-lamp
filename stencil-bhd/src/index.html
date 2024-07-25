@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/stencil-bhd.esm.js"></script>
+    <script nomodule src="/build/stencil-bhd.js"></script>
+  </head>
+  <body>
+    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+    <a-share 
+      url="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
+      text="Mira acerca de Web Sharing API"
+      url-title="Web Sharing API">
+      Hello World
+    </a-share>
+
+    <button onclick="showProperties()">
+      Muestrame valores por consola
+    </button>
+
+    <script>
+
+        async function showProperties() {
+          const aShare = document.querySelector('a-share');
+          console.log(await aShare.getProperties());
+        }
+
+    </script>
+
+
+    <!-- <br>
+    <br>
+    <br>
+
+    <div>
+
+      <label for="urlAshare">Cambia la URL</label>
+      <input style="width: 100%;" type="text" id="urlAshare" value="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">
+
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+
+      <label for="textAshare">Cambia el texto</label>
+      <input style="width: 100%;" type="text" id="textAshare" value="Mira acerca de Web Sharing API">
+
+    </div>
+    <br>
+    <br>
+
+
+    <div>
+
+      <label for="titleAshare">Cambia el titulo</label>
+      <input style="width: 100%;" type="text" id="titleAshare" value="Web Sharing API">
+
+    </div>
+
+    <button onclick="forChanging()">
+      Cambiar
+    </button>
+
+    <script>
+      const aShare = document.querySelector('a-share');
+
+      function forChanging() {
+        aShare.url = document.querySelector('#urlAshare').value;
+        aShare.text = document.querySelector('#textAshare').value;
+        aShare.title = document.querySelector('#titleAshare').value;
+      }
+    </script> -->
+  </body>
+</html>
