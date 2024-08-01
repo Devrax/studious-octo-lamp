@@ -5,7 +5,7 @@ import { Component, Prop, State, Event, EventEmitter, Element, Watch, Method, Li
     // styles: `:host {}`, // Estilos embebidos directamente
     // styleUrl: "./component-anatomy.css", // Estilos externos en otro archivo
     // styleUrls: ["./component-anatomy.1.css", "./component-anatomy.2.css"], // Estilos externos dispersos en multiples archivos
-    // scoped: true, // Es una implementación externa a lo que normalmente se ve con Shadow DOM que es una forma de encapsular componentes nativos web
+    // scoped: true, // Es una implementación externa a lo que normalmente se ve con Shadow DOM que es una forma de encapsular componentes nativos web; Custom-elements
     // assetsDirs: ["../assets"],
     // formAssociated: false,
     // shadow: true, // Encapsulación nativa web, es parte del estandar de Web Components
@@ -49,6 +49,7 @@ export class ComponentAnatomy {
     
     // Provocan re-renderizado
     @Prop() normalProp: string;
+
     @Prop({
         // Nombre personalizado del input
         attribute: 'configured-prop',
@@ -56,12 +57,14 @@ export class ComponentAnatomy {
         mutable: true,
         // Al modificar internamente el valor, si quieres que ese valor nuevo se refleje en attributes, debes ponerlo en true
         reflect: true
-    }) noAccessName: string;
+    })
+    noAccessName: string;
 
     @State() normalState: boolean;
 
     // No provocan renderizado
     @Event() normalEvent: EventEmitter<boolean>;
+
     @Event({
         // Nombre personalizado del evento
         eventName: 'customNormalEvent',
@@ -71,9 +74,10 @@ export class ComponentAnatomy {
         cancelable: true,
          // Si este evento puede ser detectado fuera del Shadow DOM cuando este está en true
         composed: true,
-    }) configuredEvent: EventEmitter<boolean>;
+    })
+    configuredEvent: EventEmitter<boolean>;
 
-    // Referencia del componente en si mismo
+    // Referencia del componente asi si mismo
     @Element() iAmComponentAnatomyAsHTML: HTMLElement;
 
 
@@ -107,8 +111,8 @@ export class ComponentAnatomy {
 
     @Listen('click', {
         target: 'body' || 'document' || 'window',
-        capture: true,
-        passive: true
+        capture: true, // https://www.quirksmode.org/js/events_order.html
+        passive: true // https://developer.chrome.com/blog/passive-event-listeners?hl=es-419
     })
     listeningWithExtraOpts() {}
 
