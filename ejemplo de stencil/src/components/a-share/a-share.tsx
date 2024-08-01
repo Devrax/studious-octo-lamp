@@ -3,6 +3,7 @@ import { ShareData } from './share-data.interface';
 
 @Component({
   tag: 'a-share',
+  assetsDirs: ['assets'],
   styles: `
   .a-style:hover {
     color: blue;
@@ -24,7 +25,11 @@ export class AShare{
 
   render() {
     return (
-        <Host class="a-style"></Host>
+        <Host class="a-style">
+          <slot/>
+          <img style={{width: '12px', height: '12px'}} src="assets/share.svg" alt="test"/>
+          <slot name="end"/>
+        </Host>
     )
   }
 

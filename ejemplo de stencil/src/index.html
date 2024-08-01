@@ -9,14 +9,16 @@
     <script nomodule src="/build/stencil-bhd.js"></script>
   </head>
   <body>
-    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
     <a-share 
       url="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
       text="Mira acerca de Web Sharing API"
       url-title="Web Sharing API">
+     <p slot="end" style="display: inline-block; margin: 0 4px;">
       Hello World
+     </p>
     </a-share>
 
+    <br><br><br>
     <button onclick="showProperties()">
       Muestrame valores por consola
     </button>

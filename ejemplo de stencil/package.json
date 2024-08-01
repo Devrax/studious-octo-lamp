@@ -13,9 +13,9 @@
       "import": "./dist/stencil-bhd/stencil-bhd.esm.js",
       "require": "./dist/stencil-bhd/stencil-bhd.cjs.js"
     },
-    "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
+    "./a-share": {
+      "import": "./dist/components/a-share.js",
+      "types": "./dist/components/a-share.d.ts"
     },
     "./loader": {
       "import": "./loader/index.js",

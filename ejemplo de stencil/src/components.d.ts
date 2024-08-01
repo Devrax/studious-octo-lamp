@@ -13,19 +13,10 @@ export namespace Components {
         "url": string;
         "urlTitle": string;
     }
-    interface ComponentAnatomy {
-        "iAmAnExposedMethod": () => Promise<void>;
-        "noAccessName": string;
-        "normalProp": string;
-    }
 }
 export interface AShareCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLAShareElement;
-}
-export interface ComponentAnatomyCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLComponentAnatomyElement;
 }
 declare global {
     interface HTMLAShareElementEventMap {
@@ -46,27 +37,8 @@ declare global {
         prototype: HTMLAShareElement;
         new (): HTMLAShareElement;
     };
-    interface HTMLComponentAnatomyElementEventMap {
-        "normalEvent": boolean;
-        "customNormalEvent": boolean;
-    }
-    interface HTMLComponentAnatomyElement extends Components.ComponentAnatomy, HTMLStencilElement {
-        addEventListener<K extends keyof HTMLComponentAnatomyElementEventMap>(type: K, listener: (this: HTMLComponentAnatomyElement, ev: ComponentAnatomyCustomEvent<HTMLComponentAnatomyElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLComponentAnatomyElementEventMap>(type: K, listener: (this: HTMLComponentAnatomyElement, ev: ComponentAnatomyCustomEvent<HTMLComponentAnatomyElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
-        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-    }
-    var HTMLComponentAnatomyElement: {
-        prototype: HTMLComponentAnatomyElement;
-        new (): HTMLComponentAnatomyElement;
-    };
     interface HTMLElementTagNameMap {
         "a-share": HTMLAShareElement;
-        "component-anatomy": HTMLComponentAnatomyElement;
     }
 }
 declare namespace LocalJSX {
@@ -78,15 +50,8 @@ declare namespace LocalJSX {
         "url"?: string;
         "urlTitle"?: string;
     }
-    interface ComponentAnatomy {
-        "noAccessName"?: string;
-        "normalProp"?: string;
-        "onCustomNormalEvent"?: (event: ComponentAnatomyCustomEvent<boolean>) => void;
-        "onNormalEvent"?: (event: ComponentAnatomyCustomEvent<boolean>) => void;
-    }
     interface IntrinsicElements {
         "a-share": AShare;
-        "component-anatomy": ComponentAnatomy;
     }
 }
 export { LocalJSX as JSX };
@@ -94,7 +59,6 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "a-share": LocalJSX.AShare & JSXBase.HTMLAttributes<HTMLAShareElement>;
-            "component-anatomy": LocalJSX.ComponentAnatomy & JSXBase.HTMLAttributes<HTMLComponentAnatomyElement>;
         }
     }
 }
