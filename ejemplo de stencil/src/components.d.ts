@@ -13,6 +13,9 @@ export namespace Components {
         "url": string;
         "urlTitle": string;
     }
+    interface ClockTime {
+        "timeZoneOffset": number;
+    }
 }
 export interface AShareCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -37,8 +40,15 @@ declare global {
         prototype: HTMLAShareElement;
         new (): HTMLAShareElement;
     };
+    interface HTMLClockTimeElement extends Components.ClockTime, HTMLStencilElement {
+    }
+    var HTMLClockTimeElement: {
+        prototype: HTMLClockTimeElement;
+        new (): HTMLClockTimeElement;
+    };
     interface HTMLElementTagNameMap {
         "a-share": HTMLAShareElement;
+        "clock-time": HTMLClockTimeElement;
     }
 }
 declare namespace LocalJSX {
@@ -50,8 +60,12 @@ declare namespace LocalJSX {
         "url"?: string;
         "urlTitle"?: string;
     }
+    interface ClockTime {
+        "timeZoneOffset"?: number;
+    }
     interface IntrinsicElements {
         "a-share": AShare;
+        "clock-time": ClockTime;
     }
 }
 export { LocalJSX as JSX };
@@ -59,6 +73,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "a-share": LocalJSX.AShare & JSXBase.HTMLAttributes<HTMLAShareElement>;
+            "clock-time": LocalJSX.ClockTime & JSXBase.HTMLAttributes<HTMLClockTimeElement>;
         }
     }
 }
