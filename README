@@ -1,0 +1,42 @@
+# Split Bundle y Lazy Loading en StencilJS
+
+## Split Bundle
+
+### ¿Qué es Split Bundle?
+
+El término "split bundle" se refiere a la técnica de dividir el código de una aplicación en múltiples paquetes más pequeños que pueden ser cargados de manera independiente. Esto permite que solo se cargue el código necesario cuando se necesita, en lugar de cargar toda la aplicación de una vez. Este enfoque mejora los tiempos de carga iniciales y optimiza el rendimiento de la aplicación.
+
+### Split Bundle en StencilJS
+
+En StencilJS, la división de paquetes se realiza automáticamente a través del análisis estático del código. Stencil genera un gráfico de componentes que muestra cómo están interconectados. Con base en este gráfico, Stencil decide cómo agrupar los componentes en paquetes que se cargan de manera diferida (lazy-loaded). Esto minimiza las solicitudes de red y mejora el rendimiento de la aplicación.
+
+La configuración `bundles` en StencilJS permite personalizar manualmente cómo se agrupan los componentes en paquetes. Sin embargo, esto rara vez es necesario, ya que Stencil maneja automáticamente la agrupación de componentes de manera eficiente.
+
+## Lazy Loading
+
+### ¿Qué es Lazy Loading?
+
+Lazy loading, o carga diferida, es una técnica que retrasa la carga de recursos hasta que son realmente necesarios para mejorar el rendimiento y reducir el uso de recursos. En lugar de cargar todos los componentes al inicio, los componentes se cargan bajo demanda cuando el usuario interactúa con la aplicación.
+
+### Lazy Loading en StencilJS
+
+StencilJS implementa lazy loading de componentes de manera automática. Cuando se crea un componente, Stencil genera un archivo separado para cada componente y carga estos archivos solo cuando el componente es necesario en la aplicación. Esto se logra mediante el uso de ES modules y dynamic imports.
+
+Esta técnica es especialmente útil para aplicaciones grandes con muchos componentes, ya que reduce el tiempo de carga inicial y permite que la aplicación responda más rápidamente a las interacciones del usuario.
+
+### Configuración en StencilJS
+
+En StencilJS, no se requiere configuración adicional para habilitar el lazy loading, ya que se maneja automáticamente. Sin embargo, los desarrolladores pueden ajustar las configuraciones de agrupación de componentes y otras opciones relacionadas con el rendimiento según sea necesario.
+
+#### Ejemplo de Configuración
+
+```typescript
+export const config: Config = {
+  bundles: [
+    { components: ['my-component', 'another-component'] },
+  ],
+  outputTargets: [
+    { type: 'dist' },
+    { type: 'www' }
+  ]
+};

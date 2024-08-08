@@ -1,5 +1,6 @@
 {
   "name": "stencil-bhd",
+  "private": "true",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -16,6 +17,10 @@
     "./a-share": {
       "import": "./dist/components/a-share.js",
       "types": "./dist/components/a-share.d.ts"
+    },
+    "./clock-time": {
+      "import": "./dist/components/clock-time.js",
+      "types": "./dist/components/clock-time.d.ts"
     },
     "./loader": {
       "import": "./loader/index.js",

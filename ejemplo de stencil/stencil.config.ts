@@ -20,6 +20,8 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+
+  // Sobrevalorado; Por el momento no se cubriran las pruebas unitarias
   testing: {
     browserHeadless: "new",
   },
