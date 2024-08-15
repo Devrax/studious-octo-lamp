@@ -1,6 +1,6 @@
 import { Config } from '@stencil/core';
 import { angularOutputTarget } from '@stencil/angular-output-target'; // npm i @stencil/angular-output-target --save-dev
-// import { reactOutputTarget } from '@stencil/react-output-target'; // npm i @stencil/react-output-target --save-dev
+import { reactOutputTarget } from '@stencil/react-output-target'; // npm i @stencil/react-output-target --save-dev
 
 
 export const config: Config = {
@@ -19,14 +19,14 @@ export const config: Config = {
       type: 'docs-readme',
     },
     angularOutputTarget({
-      componentCorePackage: 'stencil-bhd',
+      componentCorePackage: 'stencil-chapter',
       outputType: 'component',
       directivesProxyFile: '../angular-app/projects/bhd-custom-elements/src/lib/ejemplo-de-stencil/components.ts',
       directivesArrayFile: '../angular-app/projects/bhd-custom-elements/src/lib/ejemplo-de-stencil/index.ts',
     }),
-    // reactOutputTarget({
-    //     componentCorePackage: 'stencil-bhd',
-    //     proxiesFile: '../wrapper react/src/components.ts'
-    // }),
+    reactOutputTarget({
+        componentCorePackage: 'stencil-chapter',
+        proxiesFile: '../wrapper react/src/components.ts'
+    }),
   ],
 };

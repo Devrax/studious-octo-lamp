@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
-import { Components } from 'stencil-bhd';
+import { Components } from 'stencil-chapter';
 
 
 @ProxyCmp({

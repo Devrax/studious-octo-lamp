@@ -1,27 +1,23 @@
 {
-  "name": "stencil-bhd",
-  "version": "0.0.4",
+  "name": "stencil-chapter",
+  "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stencil-bhd/stencil-bhd.esm.js",
+  "unpkg": "dist/stencil-chapter/stencil-chapter.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/stencil-bhd/stencil-bhd.esm.js",
-      "require": "./dist/stencil-bhd/stencil-bhd.cjs.js"
+      "import": "./dist/stencil-chapter/stencil-chapter.esm.js",
+      "require": "./dist/stencil-chapter/stencil-chapter.cjs.js"
     },
-    "./components": {
-      "import": "./dist/components/index.js",
-      "types": "./dist/components/index.d.ts"
-    },
-    "./components/a-share": {
+    "./a-share": {
       "import": "./dist/components/a-share.js",
       "types": "./dist/components/a-share.d.ts"
     },
-    "./components/clock-time": {
+    "./clock-time": {
       "import": "./dist/components/clock-time.js",
       "types": "./dist/components/clock-time.d.ts"
     },
@@ -33,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/Devrax/studious-octo-lamp"
   },
   "files": [
     "dist/",
