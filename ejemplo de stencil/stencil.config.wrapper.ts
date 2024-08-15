@@ -25,7 +25,7 @@ export const config: Config = {
       directivesArrayFile: '../angular-app/projects/bhd-custom-elements/src/lib/ejemplo-de-stencil/index.ts',
     }),
     reactOutputTarget({
-        componentCorePackage: 'stencil-chapter',
+        componentCorePackage: 'stencil-chapter/loader',
         proxiesFile: '../my-react-app/src/generated/components.ts'//'../wrapper react/src/components.ts'
     }),
   ],
