@@ -4,12 +4,10 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Even
 
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
-import type { Components } from 'stencil-bhd/components';
+import { Components } from 'stencil-bhd';
 
-import { defineCustomElement as defineAShare } from 'stencil-bhd/components/a-share.js';
-import { defineCustomElement as defineClockTime } from 'stencil-bhd/components/clock-time.js';
+
 @ProxyCmp({
-  defineCustomElementFn: defineAShare,
   inputs: ['files', 'text', 'url', 'urlTitle'],
   methods: ['getProperties']
 })
@@ -19,7 +17,6 @@ import { defineCustomElement as defineClockTime } from 'stencil-bhd/components/c
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['files', 'text', 'url', 'urlTitle'],
-  standalone: true
 })
 export class AShare {
   protected el: HTMLElement;
@@ -40,7 +37,6 @@ export declare interface AShare extends Components.AShare {
 
 
 @ProxyCmp({
-  defineCustomElementFn: defineClockTime,
   inputs: ['timeZoneOffset']
 })
 @Component({
@@ -49,7 +45,6 @@ export declare interface AShare extends Components.AShare {
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['timeZoneOffset'],
-  standalone: true
 })
 export class ClockTime {
   protected el: HTMLElement;

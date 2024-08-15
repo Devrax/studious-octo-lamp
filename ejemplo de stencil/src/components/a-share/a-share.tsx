@@ -3,7 +3,7 @@ import { ShareData } from './share-data.interface';
 
 @Component({
   tag: 'a-share',
-  assetsDirs: ['assets'],
+  assetsDirs: ['./assets'],
   styles: `
   .a-style:hover {
     color: blue;
