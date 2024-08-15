@@ -22,6 +22,7 @@ export const config: Config = {
     },
     angularOutputTarget({
       componentCorePackage: 'stencil-bhd',
+      outputType: 'standalone',
       directivesProxyFile: '../angular-app/projects/bhd-custom-elements/src/lib/ejemplo-de-stencil/components.ts',
       directivesArrayFile: '../angular-app/projects/bhd-custom-elements/src/lib/ejemplo-de-stencil/index.ts',
     }),

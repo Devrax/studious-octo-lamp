@@ -13,11 +13,15 @@
       "import": "./dist/stencil-bhd/stencil-bhd.esm.js",
       "require": "./dist/stencil-bhd/stencil-bhd.cjs.js"
     },
-    "./a-share": {
+    "./components": {
+      "import": "./dist/components/index.js",
+      "types": "./dist/components/index.d.ts"
+    },
+    "./components/a-share": {
       "import": "./dist/components/a-share.js",
       "types": "./dist/components/a-share.d.ts"
     },
-    "./clock-time": {
+    "./components/clock-time": {
       "import": "./dist/components/clock-time.js",
       "types": "./dist/components/clock-time.d.ts"
     },
