@@ -6,10 +6,12 @@ import { reactOutputTarget } from '@stencil/react-output-target'; // npm i @sten
 export const config: Config = {
   namespace: 'stencil-bhd',
   outputTargets: [
+    // Ideal para empaquetar todos los componentes en una sola biblioteca que se utiliza en conjunto.
     {
       type: 'dist',
       esmLoaderPath: '../loader',
     },
+    // Ideal cuando se necesita exportar y utilizar los componentes de forma individual como Custom Elements nativos en diferentes proyectos.
     {
         type: 'dist-custom-elements',
         customElementsExportBehavior: 'auto-define-custom-elements',
@@ -20,12 +22,12 @@ export const config: Config = {
     },
     angularOutputTarget({
       componentCorePackage: 'stencil-bhd',
-      directivesProxyFile: '../wrapper angular/projects/ejemplo-wrapper-stencil/src/lib/ejemplo-de-stencil/components.ts',
-      directivesArrayFile: '../wrapper angular/projects/ejemplo-wrapper-stencil/src/lib/ejemplo-de-stencil/index.ts',
+      directivesProxyFile: '../angular-app/projects/bhd-custom-elements/src/lib/ejemplo-de-stencil/components.ts',
+      directivesArrayFile: '../angular-app/projects/bhd-custom-elements/src/lib/ejemplo-de-stencil/index.ts',
     }),
     reactOutputTarget({
         componentCorePackage: 'stencil-bhd',
-        proxiesFile: '../wrapper react/src/components.ts',
+        proxiesFile: '../wrapper react/src/components.ts'
     }),
   ],
 };

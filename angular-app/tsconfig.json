@@ -2,12 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
     "paths": {
-      "ejemplo-wrapper-stencil": [
-        "./dist/ejemplo-wrapper-stencil"
+      "bhd-custom-elements": [
+        "./dist/bhd-custom-elements"
       ]
     },
+    "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
