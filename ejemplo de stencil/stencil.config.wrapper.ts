@@ -26,7 +26,7 @@ export const config: Config = {
     }),
     reactOutputTarget({
         componentCorePackage: 'stencil-chapter',
-        proxiesFile: '../wrapper react/src/components.ts'
+        proxiesFile: '../my-react-app/src/generated/components.ts'//'../wrapper react/src/components.ts'
     }),
   ],
 };
