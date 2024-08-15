@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'stencil-bhd',
+  namespace: 'stencil-chapter',
   outputTargets: [
     {
       type: 'dist',

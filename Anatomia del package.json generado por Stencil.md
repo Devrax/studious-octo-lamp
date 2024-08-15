@@ -1,7 +1,6 @@
 ```json
-
 {
-  "name": "stencil-bhd",
+  "name": "stencil-chapter",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -9,11 +8,11 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stencil-bhd/stencil-bhd.esm.js",
+  "unpkg": "dist/stencil-chapter/stencil-chapter.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/stencil-bhd/stencil-bhd.esm.js",
-      "require": "./dist/stencil-bhd/stencil-bhd.cjs.js"
+      "import": "./dist/stencil-chapter/stencil-chapter.esm.js",
+      "require": "./dist/stencil-chapter/stencil-chapter.cjs.js"
     },
     "./a-share": {
       "import": "./dist/components/a-share.js",
@@ -31,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/Devrax/studious-octo-lamp"
   },
   "files": [
     "dist/",
@@ -39,13 +38,16 @@
   ],
   "scripts": {
     "build": "stencil build",
+    "build:wrapper": "stencil build --config=stencil.config.wrapper.ts",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
   "devDependencies": {
+    "@stencil/angular-output-target": "^0.8.4",
     "@stencil/core": "^4.7.0",
+    "@stencil/react-output-target": "^0.5.3",
     "@types/jest": "^29.5.6",
     "@types/node": "^16.18.11",
     "jest": "^29.7.0",
@@ -54,13 +56,14 @@
   },
   "license": "MIT"
 }
+
 ```
 
 # Explicación del `package.json`
 
 ## Información General
 
-- **name**: "stencil-bhd"
+- **name**: "stencil-chapter"
   - Nombre del paquete.
 
 - **version**: "0.0.1"

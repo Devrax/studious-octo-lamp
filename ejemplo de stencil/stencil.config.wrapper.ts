@@ -4,7 +4,7 @@ import { reactOutputTarget } from '@stencil/react-output-target'; // npm i @sten
 
 
 export const config: Config = {
-  namespace: 'stencil-bhd',
+  namespace: 'stencil-chapter',
   outputTargets: [
     // Ideal para empaquetar todos los componentes en una sola biblioteca que se utiliza en conjunto.
     {

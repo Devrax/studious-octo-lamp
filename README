@@ -1,42 +1,66 @@
-# Split Bundle y Lazy Loading en StencilJS
+# Resumen del Uso Básico del CLI de Stencil
 
-## Split Bundle
+## Comandos Más Usados
 
-### ¿Qué es Split Bundle?
+- **`stencil build`**
+  - Compila el proyecto Stencil.
+  - Utiliza el archivo `stencil.config.ts` para la configuración por defecto o uno personalizado.
+  - Crea archivos en la carpeta `dist/` según la configuración de salida.
 
-El término "split bundle" se refiere a la técnica de dividir el código de una aplicación en múltiples paquetes más pequeños que pueden ser cargados de manera independiente. Esto permite que solo se cargue el código necesario cuando se necesita, en lugar de cargar toda la aplicación de una vez. Este enfoque mejora los tiempos de carga iniciales y optimiza el rendimiento de la aplicación.
+| parametros        | Descripción                          |
+|---------------|------------------------------------------|
+| `--dev`       | Development build                        |
+| `--watch`     | Rebuild when files update                |
+| `--serve`     | Start the dev-server                     |
+| `--prerender` | Prerender the application                |
+| `--docs`      | Generate component `readme.md` docs      |
+| `--config`    | Set Stencil config file                  |
+| `--stats`     | Write `stencil-stats.json` file          |
+| `--log`       | Write `stencil-build.log` file           |
+| `--debug`     | Set the log level to debug               |
 
-### Split Bundle en StencilJS
 
-En StencilJS, la división de paquetes se realiza automáticamente a través del análisis estático del código. Stencil genera un gráfico de componentes que muestra cómo están interconectados. Con base en este gráfico, Stencil decide cómo agrupar los componentes en paquetes que se cargan de manera diferida (lazy-loaded). Esto minimiza las solicitudes de red y mejora el rendimiento de la aplicación.
+- **`stencil start`**
+  - Compila el proyecto en modo desarrollo y activa un servidor de desarrollo.
+  - Utiliza la configuración de `stencil.config.ts`.
+  - Permite el uso de `--dev` para modo desarrollo, `--watch` para observación de cambios, y `--serve` para servir la aplicación.
 
-La configuración `bundles` en StencilJS permite personalizar manualmente cómo se agrupan los componentes en paquetes. Sin embargo, esto rara vez es necesario, ya que Stencil maneja automáticamente la agrupación de componentes de manera eficiente.
+- **`stencil test`**
+  - Ejecuta pruebas unitarias y de extremo a extremo.
+  - Usa `--spec` para pruebas unitarias y `--e2e` para pruebas de extremo a extremo.
+  - `--watchAll` ejecuta las pruebas en modo vigilancia.
 
-## Lazy Loading
+- **`stencil generate` o `stencil g`**
+  - Genera componentes, servicios u otros archivos según la plantilla de Stencil.
 
-### ¿Qué es Lazy Loading?
+## Compilación de Componentes
 
-Lazy loading, o carga diferida, es una técnica que retrasa la carga de recursos hasta que son realmente necesarios para mejorar el rendimiento y reducir el uso de recursos. En lugar de cargar todos los componentes al inicio, los componentes se cargan bajo demanda cuando el usuario interactúa con la aplicación.
+- **Por Defecto**
+  - Utiliza el archivo `stencil.config.ts` para la configuración de compilación. Ejemplo de como usar otro que no sea el por defecto `stencil build --config stencil.no-default-config.ts`
+  - La configuración por defecto compila los archivos y los coloca en la carpeta `dist/`.
 
-### Lazy Loading en StencilJS
+- **Configuración Personalizada**
+  - Puedes crear un archivo `stencil.config.ts` personalizado en la raíz del proyecto.
+  - El archivo debe exportar una configuración de Stencil que se adapte a tus necesidades.
+  - La configuración personalizada se usa automáticamente cuando ejecutas los comandos de Stencil.
 
-StencilJS implementa lazy loading de componentes de manera automática. Cuando se crea un componente, Stencil genera un archivo separado para cada componente y carga estos archivos solo cuando el componente es necesario en la aplicación. Esto se logra mediante el uso de ES modules y dynamic imports.
+## Publicación en NPM
 
-Esta técnica es especialmente útil para aplicaciones grandes con muchos componentes, ya que reduce el tiempo de carga inicial y permite que la aplicación responda más rápidamente a las interacciones del usuario.
+1. **Preparar el Paquete**
+   - Asegúrate de que el archivo `package.json` esté correctamente configurado con el nombre, versión, y otros detalles del paquete.
 
-### Configuración en StencilJS
+2. **Autenticarse en NPM**
+   - Asegúrate de estar autenticado en tu cuenta de NPM usando `npm login`.
 
-En StencilJS, no se requiere configuración adicional para habilitar el lazy loading, ya que se maneja automáticamente. Sin embargo, los desarrolladores pueden ajustar las configuraciones de agrupación de componentes y otras opciones relacionadas con el rendimiento según sea necesario.
+3. **Publicar el Paquete**
+   - Ejecuta `npm publish` en la raíz del proyecto para publicar el paquete en el registro de NPM.
 
-#### Ejemplo de Configuración
+4. **Versionar el Paquete**
+   - Actualiza la versión en `package.json` usando `npm version [major|minor|patch]` antes de publicar nuevas versiones.
 
-```typescript
-export const config: Config = {
-  bundles: [
-    { components: ['my-component', 'another-component'] },
-  ],
-  outputTargets: [
-    { type: 'dist' },
-    { type: 'www' }
-  ]
-};
+## Recursos Adicionales
+
+- [Documentación Oficial de Stencil](https://stenciljs.com/docs/introduction)
+- [CLI de Stencil en GitHub](https://github.com/ionic-team/stencil)
+
+

@@ -28,7 +28,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input":  "node_modules/stencil-bhd/dist/stencil-bhd/assets",
+                "input":  "node_modules/stencil-chapter/dist/stencil-chapter/assets",
                 "output": "./assets"
               },
               "src/favicon.ico",
