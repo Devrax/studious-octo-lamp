@@ -32,11 +32,11 @@
       "typescript": "^3.3.4000"
     },
     "dependencies": {
-      "stencil-bhd": "^0.0.1"
+      "stencil-chapter": "^0.0.1"
     },
     "peerDependencies": {
       "react": "^16.7.0",
       "react-dom": "^16.7.0",
-      "stencil-bhd": ">=0.0.1"
+      "stencil-chapter": ">=0.0.1"
     }
   }

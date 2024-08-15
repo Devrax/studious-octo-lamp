@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { DIRECTIVES } from './ejemplo-de-stencil';
-import { defineCustomElements } from 'stencil-bhd/loader';
+import { defineCustomElements } from 'stencil-chapter/loader';
 
 defineCustomElements(window);
 
